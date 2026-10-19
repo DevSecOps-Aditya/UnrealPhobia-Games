@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Signal Green | Coming Soon</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --green:#39ff88;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            font-family:'Inter',sans-serif;
+
+            background:
+                    radial-gradient(circle at top,
+                    #142218 0%,
+                    #080808 40%,
+                    #030303 100%);
+
+            color:white;
+
+            overflow-x:hidden;
+        }
+
+        /* Moving Fog */
+
+        body::before{
+            content:'';
+
+            position:fixed;
+            inset:0;
+
+            background:
+                    radial-gradient(
+                            rgba(57,255,136,.08),
+                            transparent 60%
+                    );
+
+            filter:blur(100px);
+
+            animation:fog 12s infinite alternate;
+        }
+
+        @keyframes fog{
+            from{
+                transform:translateX(-50px);
+            }
+            to{
+                transform:translateX(50px);
+            }
+        }
+
+        .container{
+            max-width:1300px;
+            width:90%;
+
+            display:grid;
+            grid-template-columns:1fr 1fr;
+
+            gap:70px;
+
+            align-items:center;
+
+            z-index:2;
+        }
+
+        /* Poster */
+
+        .poster{
+            display:flex;
+            justify-content:center;
+        }
+
+        .poster img{
+            width:100%;
+            max-width:500px;
+
+            border-radius:18px;
+
+            box-shadow:
+                    0 0 60px rgba(57,255,136,.18);
+        }
+
+        /* Content */
+
+        .content h3{
+            color:var(--green);
+
+            text-transform:uppercase;
+
+            letter-spacing:4px;
+
+            margin-bottom:15px;
+        }
+
+        .content h1{
+            font-family:'Cinzel',serif;
+
+            font-size:5rem;
+
+            line-height:1;
+        }
+
+        .green{
+            color:var(--green);
+
+            text-shadow:
+                    0 0 15px rgba(57,255,136,.8),
+                    0 0 45px rgba(57,255,136,.4);
+        }
+
+        .tagline{
+            margin-top:25px;
+
+            font-size:1.3rem;
+
+            font-weight:700;
+
+            color:#e2e2e2;
+        }
+
+        .desc{
+            margin-top:25px;
+
+            color:#bdbdbd;
+
+            line-height:1.8;
+        }
+
+        /* Lore Box */
+
+        .lore{
+            margin-top:35px;
+
+            padding:25px;
+
+            border-radius:18px;
+
+            background:rgba(255,255,255,.05);
+
+            border:1px solid rgba(255,255,255,.08);
+
+            backdrop-filter:blur(20px);
+        }
+
+        .lore p{
+            color:#cfcfcf;
+            line-height:1.8;
+        }
+
+        /* Buttons */
+
+        .buttons{
+            margin-top:35px;
+
+            display:flex;
+            gap:15px;
+        }
+
+        .btn{
+            padding:15px 30px;
+
+            border:none;
+
+            border-radius:12px;
+
+            cursor:pointer;
+
+            text-decoration:none;
+
+            font-weight:700;
+
+            transition:.3s;
+        }
+
+        .primary{
+            background:var(--green);
+
+            color:black;
+        }
+
+        .secondary{
+            background:rgba(255,255,255,.08);
+
+            color:white;
+        }
+
+        .btn:hover{
+            transform:translateY(-4px);
+        }
+
+        /* Footer */
+
+        .footer{
+            position:fixed;
+
+            bottom:20px;
+
+            left:50%;
+
+            transform:translateX(-50%);
+
+            color:#888;
+
+            font-size:.9rem;
+        }
+
+        /* Mobile */
+
+        @media(max-width:900px){
+
+            .container{
+                grid-template-columns:1fr;
+                text-align:center;
+            }
+
+            .content h1{
+                font-size:3rem;
+            }
+
+            .buttons{
+                justify-content:center;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="poster">
+        <img src="cart1.png" alt="Signal Green Poster">
+    </div>
+
+    <div class="content">
+
+        <h3>UnrealPhobia Games Presents</h3>
+
+        <h1>
+            SIGNAL<br>
+            <span class="green">GREEN</span>
+        </h1>
+
+        <p class="tagline">
+            Do not stop the train.
+        </p>
+
+        <p class="desc">
+            Blackwood Station, 1920.
+
+            Every midnight, a train emerges from the fog.
+
+            The problem?
+
+            Railway records state that the train was
+            permanently discontinued in 1889.
+
+            Yet it still arrives every night.
+        </p>
+
+        <div class="lore">
+
+            <p>
+                You are the night guard of Blackwood Station.
+
+                Fifteen steps from the platform lies
+                Blackwood Cemetery.
+
+                When the train approaches, you must
+                keep the signal green.
+
+                No inspections.
+
+                No questions.
+
+                No passengers.
+
+                And under no circumstances...
+                stop the train.
+            </p>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="#" class="btn primary">
+                Wishlist Soon
+            </a>
+
+            <a href="index.html" class="btn secondary">
+                Back Home
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
