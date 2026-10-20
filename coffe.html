@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Support UnrealPhobia Games</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --green:#34ff8b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,
+    #102116 0%,
+    #080808 50%,
+    #050505 100%);
+
+    color:white;
+    font-family:'Inter',sans-serif;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    padding:50px;
+
+    text-align:center;
+}
+
+h1{
+    font-family:'Cinzel',serif;
+    font-size:3.5rem;
+}
+
+.green{
+    color:var(--green);
+
+    text-shadow:
+    0 0 15px rgba(52,255,139,.8),
+    0 0 40px rgba(52,255,139,.35);
+}
+
+.subtitle{
+    margin-top:15px;
+    color:#cccccc;
+    font-size:1.1rem;
+}
+
+.message{
+    margin-top:35px;
+    color:#dedede;
+    line-height:1.8;
+}
+
+.cards{
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 25px rgba(52,255,139,.15);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cfcfcf;
+    line-height:1.7;
+}
+
+.btn{
+    margin-top:20px;
+
+    padding:14px 24px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--green);
+
+    color:black;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(52,255,139,.5);
+}
+
+.email-box{
+    margin-top:40px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.email{
+    color:var(--green);
+    font-weight:700;
+    font-size:1.1rem;
+}
+
+.footer{
+    margin-top:35px;
+    color:#999;
+}
+
+.back-btn{
+    margin-top:25px;
+    display:inline-block;
+
+    color:black;
+    text-decoration:none;
+
+    background:var(--green);
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    font-weight:700;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>
+        Fuel <span class="green">Signal Green</span>
+    </h1>
+
+    <p class="subtitle">
+        Support the development of future UnrealPhobia Games projects.
+    </p>
+
+    <p class="message">
+        Every gift card helps us purchase game assets, sound effects,
+        software licenses, development tools, and other resources used
+        to bring projects like <b>Signal Green</b> to life.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🎁 Amazon Gift Card</h2>
+
+            <p>
+                Purchase an Amazon Gift Card and send it to our studio email.
+            </p>
+
+            <button class="btn"
+            onclick="window.open('https://www.amazon.in/gp/gc/create','_blank')">
+                Support via Amazon
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛒 Flipkart Gift Card</h2>
+
+            <p>
+                Purchase a Flipkart Gift Card and help fund future horror projects.
+            </p>
+
+            <button class="btn"
+            onclick="window.open('https://www.flipkart.com/the-gift-card-store','_blank')">
+                Support via Flipkart
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="email-box">
+
+        <p>
+            After purchasing a gift card, please send it to:
+        </p>
+
+        <br>
+
+        <div class="email">
+            unrealphobiagames@gmail.com
+        </div>
+
+    </div>
+
+    <a class="back-btn" href="index.html">
+        ← Back to Homepage
+    </a>
+
+    <div class="footer">
+        UnrealPhobia Games • Built to Craft Psychological Nightmares
+    </div>
+
+</div>
+
+</body>
+</html>
