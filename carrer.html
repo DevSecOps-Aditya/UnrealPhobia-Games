@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | UP Games</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+url('cart1.png');
+background-size:cover;
+background-position:center;
+}
+.hero h1{
+font-size:5rem;
+margin-bottom:20px;
+color:#00ff88;
+}
+.hero p{
+font-size:1.2rem;
+max-width:800px;
+color:#ddd;
+}
+.btn{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#00ff88;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #00ff88;
+}
+section{
+padding:100px 8%;
+}
+.title{
+text-align:center;
+font-size:3rem;
+color:#00ff88;
+margin-bottom:60px;
+}
+.jobs{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+}
+.job-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+transition:.3s;
+}
+.job-card:hover{
+transform:translateY(-10px);
+border-color:#00ff88;
+}
+.job-card h2{
+margin-bottom:15px;
+color:#00ff88;
+}
+.job-card ul{
+padding-left:20px;
+margin-top:15px;
+}
+.job-card li{
+margin-bottom:10px;
+color:#ddd;
+}
+.requirements{
+margin-top:15px;
+padding:12px;
+background:rgba(0,255,136,0.08);
+border-left:3px solid #00ff88;
+border-radius:8px;
+font-size:0.95rem;
+}
+.requirements strong{
+color:#00ff88;
+}
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+.benefit{
+background:#111;
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
+.benefit h3{
+color:#00ff88;
+margin-bottom:10px;
+}
+.notice{
+max-width:1000px;
+margin:auto;
+background:#111;
+border-left:5px solid #00ff88;
+padding:30px;
+border-radius:15px;
+}
+.notice h2{
+color:#00ff88;
+margin-bottom:15px;
+}
+.notice p{
+line-height:1.8;
+color:#ccc;
+}
+.form-container{
+max-width:800px;
+margin:auto;
+}
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+input,
+select,
+textarea{
+padding:15px;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+}
+textarea{
+height:150px;
+resize:none;
+}
+.submit{
+background:#00ff88;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border:none;
+}
+.checkbox-group{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:0.95rem;
+color:#ccc;
+}
+.checkbox-group input[type="checkbox"]{
+width:18px;
+height:18px;
+accent-color:#00ff88;
+}
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid #222;
+color:#888;
+}
+@media(max-width:768px){
+.hero h1{
+font-size:3rem;
+}
+.title{
+font-size:2rem;
+}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+<h1>CAREERS AT UP GAMES</h1>
+<p>
+Build worlds. Create stories. Gain real game development experience.
+Join us as we work on Signal Green and future UP Games projects.
+</p>
+<p style="margin-top:15px;color:#00ff88;font-weight:500;">
+Age Requirement: 13+ &nbsp;|&nbsp; Minimum Experience: 3 Months
+</p>
+<button class="btn"
+onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})">
+View Open Roles
+</button>
+</section>
+
+<section id="roles">
+<h1 class="title">Open Positions</h1>
+<div class="jobs">
+<div class="job-card">
+<h2>🎮 Game Designer</h2>
+<p>
+Help shape gameplay, environments and overall player experience.
+</p>
+<div class="requirements">
+<strong>Requirements:</strong> Age 13+ &nbsp;•&nbsp; Minimum 3 months experience
+</div>
+<ul>
+<li>Knowledge of Blender asset creation</li>
+<li>Experience with Unity HDRP</li>
+<li>Level design understanding</li>
+<li>Physics management in Unity</li>
+<li>Environmental storytelling</li>
+<li>Optimization and scene organization</li>
+<li>Creative problem-solving skills</li>
+</ul>
+</div>
+<div class="job-card">
+<h2>💻 Game Programmer</h2>
+<p>
+Develop gameplay systems and game logic for UP Games projects.
+</p>
+<div class="requirements">
+<strong>Requirements:</strong> Age 13+ &nbsp;•&nbsp; Minimum 3 months experience
+</div>
+<ul>
+<li>Strong C# programming skills</li>
+<li>Knowledge of Unity Engine</li>
+<li>Experience with Unity HDRP</li>
+<li>Game logic development</li>
+<li>Physics systems implementation</li>
+<li>Bug fixing and optimization</li>
+<li>Ability to work with designers and artists</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<h1 class="title">Why Join UP Games?</h1>
+<div class="benefits">
+<div class="benefit">
+<h3>🚀 Real Projects</h3>
+<p>Work on actual game development.</p>
+</div>
+<div class="benefit">
+<h3>📚 Learn</h3>
+<p>Gain hands-on experience.</p>
+</div>
+<div class="benefit">
+<h3>🎮 Portfolio</h3>
+<p>Build a stronger portfolio.</p>
+</div>
+<div class="benefit">
+<h3>🤝 Teamwork</h3>
+<p>Collaborate with other developers.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="notice">
+<h2>Internship Information</h2>
+<p>
+UP Games currently offers internship opportunities that are completely unpaid.
+These positions are intended for learning, gaining practical experience,
+improving development skills, contributing to real projects, and building a
+strong portfolio.
+</p>
+<br>
+<p>
+<strong style="color:#00ff88;">Eligibility Requirements:</strong><br>
+• Applicants must be <strong>13 years of age or older</strong>.<br>
+• Minimum of <strong>3 months of relevant experience</strong> in game development, programming, design, or related fields.
+</p>
+<br>
+<p>
+Applicants will not receive salary, wages, or financial compensation.
+Instead, they will gain hands-on experience in game development,
+team collaboration, project workflows, and production environments.
+</p>
+</div>
+</section>
+
+<section>
+<h1 class="title">Apply Now</h1>
+<div class="form-container">
+<form>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+
+<label style="color:#ccc;font-size:0.95rem;">Age (must be 13+)</label>
+<input type="number" placeholder="Your Age" min="13" required>
+
+<label style="color:#ccc;font-size:0.95rem;">Experience (months)</label>
+<input type="number" placeholder="Months of Experience" min="3" required>
+
+<select required>
+<option value="">Select Position</option>
+<option>Game Designer</option>
+<option>Game Programmer</option>
+</select>
+
+<input type="text" placeholder="Portfolio / GitHub / ArtStation Link">
+
+<textarea placeholder="Tell us about yourself and why you want to join UP Games"></textarea>
+
+<div class="checkbox-group">
+<input type="checkbox" id="ageConfirm" required>
+<label for="ageConfirm">I confirm that I am 13 years of age or older and have at least 3 months of relevant experience.</label>
+</div>
+
+<button class="btn submit">
+Submit Application
+</button>
+</form>
+</div>
+</section>
+
+<footer>
+© 2026 UP Games. All Rights Reserved.
+</footer>
+</body>
+</html>
