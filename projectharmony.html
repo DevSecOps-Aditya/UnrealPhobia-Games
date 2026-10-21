@@ -1,320 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Signal Green | Coming Soon</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        :root{
-            --green:#39ff88;
-        }
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            min-height:100vh;
-
-            display:flex;
-            justify-content:center;
-            align-items:center;
-
-            font-family:'Inter',sans-serif;
-
-            background:
-                    radial-gradient(circle at top,
-                    #142218 0%,
-                    #080808 40%,
-                    #030303 100%);
-
-            color:white;
-
-            overflow-x:hidden;
-        }
-
-        /* Moving Fog */
-
-        body::before{
-            content:'';
-
-            position:fixed;
-            inset:0;
-
-            background:
-                    radial-gradient(
-                            rgba(57,255,136,.08),
-                            transparent 60%
-                    );
-
-            filter:blur(100px);
-
-            animation:fog 12s infinite alternate;
-        }
-
-        @keyframes fog{
-            from{
-                transform:translateX(-50px);
-            }
-            to{
-                transform:translateX(50px);
-            }
-        }
-
-        .container{
-            max-width:1300px;
-            width:90%;
-
-            display:grid;
-            grid-template-columns:1fr 1fr;
-
-            gap:70px;
-
-            align-items:center;
-
-            z-index:2;
-        }
-
-        /* Poster */
-
-        .poster{
-            display:flex;
-            justify-content:center;
-        }
-
-        .poster img{
-            width:100%;
-            max-width:500px;
-
-            border-radius:18px;
-
-            box-shadow:
-                    0 0 60px rgba(57,255,136,.18);
-        }
-
-        /* Content */
-
-        .content h3{
-            color:var(--green);
-
-            text-transform:uppercase;
-
-            letter-spacing:4px;
-
-            margin-bottom:15px;
-        }
-
-        .content h1{
-            font-family:'Cinzel',serif;
-
-            font-size:5rem;
-
-            line-height:1;
-        }
-
-        .green{
-            color:var(--green);
-
-            text-shadow:
-                    0 0 15px rgba(57,255,136,.8),
-                    0 0 45px rgba(57,255,136,.4);
-        }
-
-        .tagline{
-            margin-top:25px;
-
-            font-size:1.3rem;
-
-            font-weight:700;
-
-            color:#e2e2e2;
-        }
-
-        .desc{
-            margin-top:25px;
-
-            color:#bdbdbd;
-
-            line-height:1.8;
-        }
-
-        /* Lore Box */
-
-        .lore{
-            margin-top:35px;
-
-            padding:25px;
-
-            border-radius:18px;
-
-            background:rgba(255,255,255,.05);
-
-            border:1px solid rgba(255,255,255,.08);
-
-            backdrop-filter:blur(20px);
-        }
-
-        .lore p{
-            color:#cfcfcf;
-            line-height:1.8;
-        }
-
-        /* Buttons */
-
-        .buttons{
-            margin-top:35px;
-
-            display:flex;
-            gap:15px;
-        }
-
-        .btn{
-            padding:15px 30px;
-
-            border:none;
-
-            border-radius:12px;
-
-            cursor:pointer;
-
-            text-decoration:none;
-
-            font-weight:700;
-
-            transition:.3s;
-        }
-
-        .primary{
-            background:var(--green);
-
-            color:black;
-        }
-
-        .secondary{
-            background:rgba(255,255,255,.08);
-
-            color:white;
-        }
-
-        .btn:hover{
-            transform:translateY(-4px);
-        }
-
-        /* Footer */
-
-        .footer{
-            position:fixed;
-
-            bottom:20px;
-
-            left:50%;
-
-            transform:translateX(-50%);
-
-            color:#888;
-
-            font-size:.9rem;
-        }
-
-        /* Mobile */
-
-        @media(max-width:900px){
-
-            .container{
-                grid-template-columns:1fr;
-                text-align:center;
-            }
-
-            .content h1{
-                font-size:3rem;
-            }
-
-            .buttons{
-                justify-content:center;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Signal Green | UP Games</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#070707;
+color:white;
+overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00ff7f;
+border-radius:20px;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url("cart1.png");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+max-width:900px;
+padding:30px;
+z-index:3;
+}
+
+.hero h1{
+font-size:6rem;
+letter-spacing:5px;
+text-transform:uppercase;
+animation:fadeUp 1s ease;
+}
+
+.hero p{
+font-size:1.3rem;
+margin-top:15px;
+opacity:.9;
+animation:fadeUp 1.5s ease;
+}
+
+.signal-light{
+position:absolute;
+top:120px;
+right:180px;
+width:120px;
+height:120px;
+background:#00ff66;
+border-radius:50%;
+filter:blur(40px);
+animation:pulse 2s infinite;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+cursor:pointer;
+font-size:1rem;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn-primary{
+background:#00ff66;
+color:black;
+font-weight:bold;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 30px #00ff66;
+}
+
+.btn-secondary{
+background:transparent;
+border:2px solid #00ff66;
+color:white;
+}
+
+.btn-secondary:hover{
+background:#00ff66;
+color:black;
+}
+
+/* Fog */
+
+.fog{
+position:absolute;
+width:250%;
+height:100%;
+background:url("https://i.imgur.com/m4KQ9Qh.png");
+background-size:cover;
+opacity:.08;
+animation:fogMove 80s linear infinite;
+}
+
+/* Sections */
+
+section{
+padding:120px 8%;
+}
+
+.section-title{
+font-size:3rem;
+text-align:center;
+margin-bottom:50px;
+color:#00ff66;
+}
+
+/* Story */
+
+.story{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.story img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 40px rgba(0,255,100,.2);
+}
+
+.story-text p{
+line-height:1.9;
+font-size:1.1rem;
+color:#d6d6d6;
+}
+
+/* Features */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(0,255,100,.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(0,255,100,.15);
+}
+
+.card h3{
+color:#00ff66;
+margin-bottom:15px;
+}
+
+/* Progress */
+
+.progress-box{
+max-width:900px;
+margin:auto;
+}
+
+.progress-item{
+margin-bottom:30px;
+}
+
+.progress-bar{
+width:100%;
+height:15px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+background:#00ff66;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* Timeline */
+
+.timeline{
+max-width:900px;
+margin:auto;
+position:relative;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:50%;
+width:4px;
+background:#00ff66;
+height:100%;
+transform:translateX(-50%);
+}
+
+.timeline-item{
+background:#111;
+padding:20px;
+margin:30px 0;
+border-radius:15px;
+width:45%;
+}
+
+.timeline-item:nth-child(odd){
+margin-right:auto;
+}
+
+.timeline-item:nth-child(even){
+margin-left:auto;
+}
+
+/* Stats */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.stat{
+text-align:center;
+background:#101010;
+padding:30px;
+border-radius:20px;
+}
+
+.stat h2{
+font-size:3rem;
+color:#00ff66;
+}
+
+/* Final CTA */
+
+.cta{
+background:linear-gradient(
+to right,
+#001b0a,
+#031d11
+);
+text-align:center;
+}
+
+.cta h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.cta p{
+margin-bottom:25px;
+}
+
+/* Animations */
+
+@keyframes pulse{
+0%{
+opacity:.5;
+}
+50%{
+opacity:1;
+}
+100%{
+opacity:.5;
+}
+}
+
+@keyframes fogMove{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(-50%);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.story{
+grid-template-columns:1fr;
+}
+
+.timeline::before{
+left:15px;
+}
+
+.timeline-item{
+width:100%;
+margin-left:30px!important;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="hero">
 
-    <div class="poster">
-        <img src="cart1.png" alt="Signal Green Poster">
-    </div>
+<div class="fog"></div>
 
-    <div class="content">
+<div class="signal-light"></div>
 
-        <h3>UnrealPhobia Games Presents</h3>
+<div class="hero-content">
 
-        <h1>
-            SIGNAL<br>
-            <span class="green">GREEN</span>
-        </h1>
+<h1>SIGNAL GREEN</h1>
 
-        <p class="tagline">
-            Do not stop the train.
-        </p>
+<p>
+Some trains should never arrive.
+</p>
 
-        <p class="desc">
-            Blackwood Station, 1920.
-
-            Every midnight, a train emerges from the fog.
-
-            The problem?
-
-            Railway records state that the train was
-            permanently discontinued in 1889.
-
-            Yet it still arrives every night.
-        </p>
-
-        <div class="lore">
-
-            <p>
-                You are the night guard of Blackwood Station.
-
-                Fifteen steps from the platform lies
-                Blackwood Cemetery.
-
-                When the train approaches, you must
-                keep the signal green.
-
-                No inspections.
-
-                No questions.
-
-                No passengers.
-
-                And under no circumstances...
-                stop the train.
-            </p>
-
-        </div>
-
-        <div class="buttons">
-
-            <a href="#" class="btn primary">
-                Wishlist Soon
-            </a>
-
-            <a href="index.html" class="btn secondary">
-                Back Home
-            </a>
-
-        </div>
-
-    </div>
+<div class="hero-buttons">
+<button class="btn btn-primary">Watch Trailer</button>
+<button class="btn btn-secondary">Learn More</button>
+</div>
 
 </div>
 
-<div class="footer">
+</div>
+
+<section>
+
+<h2 class="section-title">
+The Story
+</h2>
+
+<div class="story">
+
+<img src="cart1.png">
+
+<div class="story-text">
+
+<p>
+The year is 1926.
+A forgotten station continues to receive a midnight train despite being abandoned for decades.
+Locals speak of strange whistles echoing through the forest and travelers who vanish without a trace.
+When the signal turns green, the train arrives.
+And once it does, there may be no way back.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Features
+</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>🚂 Midnight Train</h3>
+<p>A train that should not exist.</p>
+</div>
+
+<div class="card">
+<h3>🌫 Atmospheric Horror</h3>
+<p>Dense fog and immersive environments.</p>
+</div>
+
+<div class="card">
+<h3>🏚 1920s Station</h3>
+<p>Explore a forgotten railway station.</p>
+</div>
+
+<div class="card">
+<h3>🎧 Immersive Audio</h3>
+<p>Every sound matters.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Development Progress
+</h2>
+
+<div class="progress-box">
+
+<div class="progress-item">
+Map Design
+<div class="progress-bar">
+<div class="progress-fill" style="width:60%"></div>
+</div>
+</div>
+
+<div class="progress-item">
+Story
+<div class="progress-bar">
+<div class="progress-fill" style="width:50%"></div>
+</div>
+</div>
+
+<div class="progress-item">
+Lighting
+<div class="progress-bar">
+<div class="progress-fill" style="width:30%"></div>
+</div>
+</div>
+
+<div class="progress-item">
+Audio
+<div class="progress-bar">
+<div class="progress-fill" style="width:20%"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Gallery
+</h2>
+
+<div class="gallery">
+
+<img src="cart1.png">
+<img src="cart1.png">
+<img src="cart1.png">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Development Timeline
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Project Started</h3>
+<p>Concept & planning phase.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Station Prototype</h3>
+<p>Core map blockout completed.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Signal System</h3>
+<p>Environmental mechanics planned.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Demo Release</h3>
+<p>Coming Soon.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Project Stats
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>1926</h2>
+<p>Setting</p>
+</div>
+
+<div class="stat">
+<h2>1</h2>
+<p>Cursed Train</p>
+</div>
+
+<div class="stat">
+<h2>∞</h2>
+<p>Mysteries</p>
+</div>
+
+<div class="stat">
+<h2>UP</h2>
+<p>Games</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>THE SIGNAL IS GREEN</h2>
+
+<p>
+Will you board?
+</p>
+
+<button class="btn btn-primary">
+Follow Development
+</button>
+
+</section>
+
+<script>
+
+window.addEventListener("scroll",()=>{
+
+let scroll = window.scrollY;
+
+document.querySelector(".signal-light").style.transform =
+`translateY(${scroll*0.15}px)`;
+
+});
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".card,.stat,.timeline-item").forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(30px)";
+el.style.transition="0.8s";
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
