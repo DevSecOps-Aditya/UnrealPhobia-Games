@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,11 @@
 <title>Signal Green | UP Games</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 html{
@@ -20,138 +20,114 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#070707;
+background:#050505;
 color:white;
 overflow-x:hidden;
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#00ff7f;
-border-radius:20px;
 }
 
 /* Hero */
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
-url("cart1.png");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
 overflow:hidden;
 }
 
-.hero-content{
-max-width:900px;
-padding:30px;
-z-index:3;
-}
-
-.hero h1{
-font-size:6rem;
-letter-spacing:5px;
-text-transform:uppercase;
-animation:fadeUp 1s ease;
-}
-
-.hero p{
-font-size:1.3rem;
-margin-top:15px;
-opacity:.9;
-animation:fadeUp 1.5s ease;
-}
-
-.signal-light{
+.hero img{
 position:absolute;
-top:120px;
-right:180px;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.3);
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.3),
+rgba(0,0,0,.8),
+rgba(0,0,0,1)
+);
+}
+
+.signal-glow{
+position:absolute;
+top:15%;
+right:15%;
 width:120px;
 height:120px;
-background:#00ff66;
 border-radius:50%;
-filter:blur(40px);
+background:#00ff84;
+filter:blur(60px);
 animation:pulse 2s infinite;
 }
 
-.hero-buttons{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+.content{
+position:relative;
+z-index:2;
+text-align:center;
+padding:20px;
+max-width:900px;
+}
+
+.content h1{
+font-size:7rem;
+letter-spacing:8px;
+text-transform:uppercase;
+}
+
+.content p{
+margin-top:20px;
+font-size:1.3rem;
+color:#cfcfcf;
 }
 
 .btn{
-padding:15px 35px;
+margin-top:30px;
+padding:16px 40px;
 border:none;
-cursor:pointer;
-font-size:1rem;
 border-radius:50px;
+background:#00ff84;
+color:black;
+font-weight:bold;
+cursor:pointer;
 transition:.3s;
 }
 
-.btn-primary{
-background:#00ff66;
-color:black;
-font-weight:bold;
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px #00ff84;
 }
 
-.btn-primary:hover{
-transform:translateY(-4px);
-box-shadow:0 0 30px #00ff66;
-}
+/* Quote Section */
 
-.btn-secondary{
-background:transparent;
-border:2px solid #00ff66;
-color:white;
-}
-
-.btn-secondary:hover{
-background:#00ff66;
-color:black;
-}
-
-/* Fog */
-
-.fog{
-position:absolute;
-width:250%;
-height:100%;
-background:url("https://i.imgur.com/m4KQ9Qh.png");
-background-size:cover;
-opacity:.08;
-animation:fogMove 80s linear infinite;
-}
-
-/* Sections */
-
-section{
-padding:120px 8%;
-}
-
-.section-title{
-font-size:3rem;
+.quote{
+padding:140px 10%;
 text-align:center;
-margin-bottom:50px;
-color:#00ff66;
+}
+
+.quote h2{
+font-size:5rem;
+max-width:1000px;
+margin:auto;
+line-height:1.1;
+}
+
+.green{
+color:#00ff84;
 }
 
 /* Story */
 
 .story{
+padding:120px 10%;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:60px;
@@ -160,197 +136,163 @@ align-items:center;
 
 .story img{
 width:100%;
-border-radius:20px;
-box-shadow:0 0 40px rgba(0,255,100,.2);
+border-radius:25px;
+}
+
+.story-text h2{
+font-size:3rem;
+margin-bottom:25px;
 }
 
 .story-text p{
-line-height:1.9;
+line-height:2;
 font-size:1.1rem;
-color:#d6d6d6;
+color:#cfcfcf;
 }
 
-/* Features */
+/* Mystery Files */
 
-.features{
+.files{
+padding:120px 10%;
+}
+
+.files h2{
+font-size:3rem;
+margin-bottom:40px;
+text-align:center;
+}
+
+.file-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
-.card{
-background:#111;
+.file{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(20px);
+border:1px solid rgba(0,255,132,.15);
 padding:30px;
 border-radius:20px;
-border:1px solid rgba(0,255,100,.2);
-transition:.3s;
+transition:.4s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(0,255,100,.15);
+.file:hover{
+transform:translateY(-10px);
+border-color:#00ff84;
 }
 
-.card h3{
-color:#00ff66;
-margin-bottom:15px;
+.file span{
+display:block;
+color:#00ff84;
+font-size:.8rem;
+margin-bottom:10px;
 }
 
-/* Progress */
+/* Development */
 
-.progress-box{
-max-width:900px;
-margin:auto;
-}
-
-.progress-item{
-margin-bottom:30px;
-}
-
-.progress-bar{
-width:100%;
-height:15px;
-background:#222;
-border-radius:20px;
-overflow:hidden;
-}
-
-.progress-fill{
-height:100%;
-background:#00ff66;
-}
-
-/* Gallery */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:15px;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-/* Timeline */
-
-.timeline{
-max-width:900px;
-margin:auto;
-position:relative;
-}
-
-.timeline::before{
-content:"";
-position:absolute;
-left:50%;
-width:4px;
-background:#00ff66;
-height:100%;
-transform:translateX(-50%);
-}
-
-.timeline-item{
-background:#111;
-padding:20px;
-margin:30px 0;
-border-radius:15px;
-width:45%;
-}
-
-.timeline-item:nth-child(odd){
-margin-right:auto;
-}
-
-.timeline-item:nth-child(even){
-margin-left:auto;
-}
-
-/* Stats */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-}
-
-.stat{
-text-align:center;
-background:#101010;
-padding:30px;
-border-radius:20px;
-}
-
-.stat h2{
-font-size:3rem;
-color:#00ff66;
-}
-
-/* Final CTA */
-
-.cta{
-background:linear-gradient(
-to right,
-#001b0a,
-#031d11
-);
+.dev{
+padding:120px 10%;
 text-align:center;
 }
 
-.cta h2{
+.dev h2{
 font-size:4rem;
 margin-bottom:20px;
 }
 
-.cta p{
-margin-bottom:25px;
+.dev-grid{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* Animations */
+.dev-card{
+padding:30px;
+border-radius:20px;
+background:#101010;
+}
+
+.dev-card h3{
+color:#00ff84;
+margin-bottom:10px;
+}
+
+/* Countdown Style */
+
+.status{
+padding:120px 10%;
+text-align:center;
+}
+
+.status-box{
+max-width:800px;
+margin:auto;
+background:#0a0a0a;
+border:1px solid rgba(0,255,132,.15);
+padding:50px;
+border-radius:30px;
+}
+
+.status-box h3{
+font-size:4rem;
+color:#00ff84;
+margin-bottom:15px;
+}
+
+/* Footer CTA */
+
+.footer-cta{
+padding:150px 10%;
+text-align:center;
+position:relative;
+}
+
+.footer-cta h2{
+font-size:5rem;
+line-height:1;
+}
+
+.footer-cta p{
+margin-top:25px;
+color:#bdbdbd;
+font-size:1.2rem;
+}
+
+.footer-cta .btn{
+margin-top:40px;
+}
+
+/* Footer */
+
+footer{
+padding:40px;
+text-align:center;
+color:#777;
+border-top:1px solid rgba(255,255,255,.05);
+}
 
 @keyframes pulse{
 0%{
 opacity:.5;
 }
+
 50%{
 opacity:1;
 }
+
 100%{
 opacity:.5;
 }
 }
 
-@keyframes fogMove{
-from{
-transform:translateX(0);
-}
-to{
-transform:translateX(-50%);
-}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* Mobile */
-
 @media(max-width:900px){
+.content h1{
+font-size:4rem;
+}
 
-.hero h1{
+.quote h2{
 font-size:3rem;
 }
 
@@ -358,29 +300,60 @@ font-size:3rem;
 grid-template-columns:1fr;
 }
 
-.timeline::before{
-left:15px;
+.footer-cta h2{
+font-size:3rem;
+}
 }
 
-.timeline-item{
-width:100%;
-margin-left:30px!important;
+@media(max-width:600px){
+.content h1{
+font-size:2.7rem;
+letter-spacing:4px;
 }
 
+.content p{
+font-size:1rem;
 }
 
+.btn{
+padding:14px 28px;
+}
+
+.quote h2{
+font-size:2.3rem;
+}
+
+.story-text h2{
+font-size:2.5rem;
+}
+
+.files h2,
+.dev h2{
+font-size:2.5rem;
+}
+
+.status-box h3{
+font-size:2.5rem;
+}
+
+.footer-cta h2{
+font-size:2.5rem;
+}
+}
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<div class="fog"></div>
+<img src="cart1.png" alt="Signal Green railway station">
 
-<div class="signal-light"></div>
+<div class="overlay"></div>
 
-<div class="hero-content">
+<div class="signal-glow"></div>
+
+<div class="content">
 
 <h1>SIGNAL GREEN</h1>
 
@@ -388,244 +361,194 @@ margin-left:30px!important;
 Some trains should never arrive.
 </p>
 
-<div class="hero-buttons">
-<button class="btn btn-primary">Watch Trailer</button>
-<button class="btn btn-secondary">Learn More</button>
-</div>
+<button class="btn"
+onclick="document.querySelector('.quote').scrollIntoView()">
+ENTER THE STATION
+</button>
 
 </div>
 
-</div>
+</section>
 
-<section>
+<section class="quote">
 
-<h2 class="section-title">
-The Story
+<h2>
+THE STATION CLOSED IN
+<span class="green">1926</span>.
+
+<br><br>
+
+THE TRAINS DIDN'T.
 </h2>
 
-<div class="story">
+</section>
 
-<img src="cart1.png">
+<section class="story">
+
+<img src="cart1.png" alt="Blackwood railway station">
 
 <div class="story-text">
 
+<h2>THE STORY</h2>
+
 <p>
-The year is 1926.
-A forgotten station continues to receive a midnight train despite being abandoned for decades.
-Locals speak of strange whistles echoing through the forest and travelers who vanish without a trace.
-When the signal turns green, the train arrives.
-And once it does, there may be no way back.
+Every midnight the signal turns green.
+
+No train is scheduled.
+
+No station officially exists.
+
+Yet a locomotive arrives through the fog exactly
+as witnesses described decades ago.
+
+Passengers board.
+
+None return.
 </p>
 
 </div>
 
-</div>
-
 </section>
 
-<section>
+<section class="files">
 
-<h2 class="section-title">
-Features
-</h2>
+<h2>KNOWN REPORTS</h2>
 
-<div class="features">
+<div class="file-grid">
 
-<div class="card">
-<h3>🚂 Midnight Train</h3>
-<p>A train that should not exist.</p>
+<div class="file">
+<span>REPORT 001</span>
+Strange whistles heard through Blackwood Forest.
 </div>
 
-<div class="card">
-<h3>🌫 Atmospheric Horror</h3>
-<p>Dense fog and immersive environments.</p>
+<div class="file">
+<span>REPORT 002</span>
+Witnesses observed green signal lights.
 </div>
 
-<div class="card">
-<h3>🏚 1920s Station</h3>
-<p>Explore a forgotten railway station.</p>
+<div class="file">
+<span>REPORT 003</span>
+Passengers missing after boarding.
 </div>
 
-<div class="card">
-<h3>🎧 Immersive Audio</h3>
-<p>Every sound matters.</p>
+<div class="file">
+<span>REPORT 004</span>
+Train identified by no official railway records.
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section class="dev">
 
-<h2 class="section-title">
-Development Progress
-</h2>
+<h2>PROJECT HARMONY</h2>
 
-<div class="progress-box">
+<p>Current Development Status</p>
 
-<div class="progress-item">
-Map Design
-<div class="progress-bar">
-<div class="progress-fill" style="width:60%"></div>
-</div>
+<div class="dev-grid">
+
+<div class="dev-card">
+<h3>✓ Environment</h3>
+Station development in progress
 </div>
 
-<div class="progress-item">
-Story
-<div class="progress-bar">
-<div class="progress-fill" style="width:50%"></div>
-</div>
+<div class="dev-card">
+<h3>✓ Core Story</h3>
+Narrative foundation completed
 </div>
 
-<div class="progress-item">
-Lighting
-<div class="progress-bar">
-<div class="progress-fill" style="width:30%"></div>
-</div>
+<div class="dev-card">
+<h3>⌛ Signal System</h3>
+Under development
 </div>
 
-<div class="progress-item">
-Audio
-<div class="progress-bar">
-<div class="progress-fill" style="width:20%"></div>
-</div>
+<div class="dev-card">
+<h3>⌛ Horror Events</h3>
+Being implemented
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section class="status">
 
-<h2 class="section-title">
-Gallery
-</h2>
+<div class="status-box">
 
-<div class="gallery">
-
-<img src="cart1.png">
-<img src="cart1.png">
-<img src="cart1.png">
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-Development Timeline
-</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<h3>Project Started</h3>
-<p>Concept & planning phase.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Station Prototype</h3>
-<p>Core map blockout completed.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Signal System</h3>
-<p>Environmental mechanics planned.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Demo Release</h3>
-<p>Coming Soon.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-Project Stats
-</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h2>1926</h2>
-<p>Setting</p>
-</div>
-
-<div class="stat">
-<h2>1</h2>
-<p>Cursed Train</p>
-</div>
-
-<div class="stat">
-<h2>∞</h2>
-<p>Mysteries</p>
-</div>
-
-<div class="stat">
-<h2>UP</h2>
-<p>Games</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>THE SIGNAL IS GREEN</h2>
+<h3>SIGNAL ACTIVE</h3>
 
 <p>
-Will you board?
+Signal Green is currently under development.
+More information will arrive with the next train.
 </p>
 
-<button class="btn btn-primary">
-Follow Development
+</div>
+
+</section>
+
+<section class="footer-cta">
+
+<h2>
+THE SIGNAL IS GREEN.
+</h2>
+
+<p>
+Will you wait...
+
+or will you board?
+</p>
+
+<button class="btn">
+FOLLOW DEVELOPMENT
 </button>
 
 </section>
 
+<footer>
+© UP Games • Signal Green
+</footer>
+
 <script>
+const cards=document.querySelectorAll(
+'.file,.dev-card,.story img,.story-text'
+);
 
-window.addEventListener("scroll",()=>{
-
-let scroll = window.scrollY;
-
-document.querySelector(".signal-light").style.transform =
-`translateY(${scroll*0.15}px)`;
-
-});
-
-const observer = new IntersectionObserver(entries=>{
-
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
-
+entry.target.animate([
+{
+opacity:0,
+transform:'translateY(60px)'
+},
+{
+opacity:1,
+transform:'translateY(0px)'
 }
-
+],{
+duration:1000,
+fill:'forwards'
 });
 
+observer.unobserve(entry.target);
+}
+});
 });
 
-document.querySelectorAll(".card,.stat,.timeline-item").forEach(el=>{
+cards.forEach(card=>observer.observe(card));
 
-el.style.opacity="0";
-el.style.transform="translateY(30px)";
-el.style.transition="0.8s";
+window.addEventListener("mousemove",(e)=>{
+const glow=document.querySelector(".signal-glow");
 
-observer.observe(el);
-
+glow.style.transform=
+`translate(
+${e.clientX*0.01}px,
+${e.clientY*0.01}px
+)`;
 });
-
 </script>
 
 </body>
 </html>
+```
