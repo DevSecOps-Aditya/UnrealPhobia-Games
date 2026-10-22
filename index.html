@@ -459,8 +459,47 @@
             font-size: 10px;
         }
     }
+
+    /* STATS */
+
+.stats-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    transition:.35s;
+}
+
+.stat-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 35px rgba(52,255,139,.2);
+}
+
+.stat-number{
+    font-size:3rem;
+    color:#34ff8b;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.stat-label{
+    color:#cfcfcf;
+    font-size:1rem;
+    font-weight:600;
+}
 </style>
-```
+
 
 </head>
 
@@ -521,6 +560,40 @@
                 Join WhatsApp Channel
             </button>
 
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- STUDIO STATS -->
+
+<section id="stats">
+
+    <h2 class="section-title" style="text-align:center;">
+        Studio Stats
+    </h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-box">
+            <div class="stat-number">70K+</div>
+            <div class="stat-label">Players Reached</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Games Developed</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Founded</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Nightmares Created</div>
         </div>
 
     </div>
