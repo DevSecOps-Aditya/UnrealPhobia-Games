@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Install Sannata</title>
+
+https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+
+<style>
+
+:root{
+    --green:#34ff8b;
+    --bg:#050505;
+    --card:rgba(255,255,255,.05);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#102116,#050505);
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.hero{
+    text-align:center;
+    padding:100px 20px 70px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#bbb;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.download-btn{
+    margin-top:35px;
+    padding:16px 35px;
+    border:none;
+    border-radius:14px;
+    background:var(--green);
+    color:black;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.download-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(52,255,139,.4);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:30px;
+    backdrop-filter:blur(20px);
+}
+
+.card h2{
+    color:var(--green);
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#ccc;
+    line-height:1.8;
+}
+
+.about{
+    margin-top:40px;
+}
+
+.about p{
+    color:#ccc;
+    line-height:2;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.feature{
+    background:var(--card);
+    border-radius:18px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.feature h3{
+    color:var(--green);
+    margin-bottom:10px;
+}
+
+.install-section{
+    text-align:center;
+    margin-top:70px;
+}
+
+.install-size{
+    margin-top:20px;
+    color:#aaa;
+}
+
+footer{
+    margin-top:90px;
+    text-align:center;
+    padding:40px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+    color:#888;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <section class="hero">
+
+        <h1>SANNATA</h1>
+
+        <p>
+            Experience psychological horror inside a haunted royal Indian bungalow.
+            Escape the house, complete rituals and avoid the creature stalking
+            you through the darkness.
+        </p>
+
+        <button class="download-btn"
+        onclick="window.location.href='https://installsannata.netlify.app'">
+            Download Now
+        </button>
+
+    </section>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Game Information</h2>
+
+            <p>
+                Genre: Horror<br>
+                Engine: Unity<br>
+                Platform: Windows 10/11<br>
+                Developer: UnrealPhobia Games
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Download Details</h2>
+
+            <p>
+                Download Size: 500 MB<br>
+                Installed Size: 1 GB<br>
+                Price: FREE
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Status</h2>
+
+            <p>
+                Available Now ✅<br>
+                Stable Release ✅<br>
+                Public Download ✅
+            </p>
+        </div>
+
+    </div>
+
+    <section class="about">
+
+        <h2 style="color:#34ff8b;">About Sannata</h2>
+
+        <br>
+
+        <p>
+            Sannata is a first-person horror experience that places you inside
+            a mysterious royal Indian bungalow.
+
+            Something lives inside the house.
+
+            To survive, you must explore dark hallways, uncover secrets,
+            perform rituals, and find a way out before the creature catches you.
+
+            Every room hides another mystery and every sound could be your last.
+        </p>
+
+    </section>
+
+    <section>
+
+        <br><br>
+
+        <h2 style="color:#34ff8b;">Features</h2>
+
+        <div class="features">
+
+            <div class="feature">
+                <h3>🏚 Royal Haunted Bungalow</h3>
+                <p>Explore a large atmospheric horror environment.</p>
+            </div>
+
+            <div class="feature">
+                <h3>👹 Monster Chase System</h3>
+                <p>A dangerous entity constantly hunts you.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🕯 Ritual Gameplay</h3>
+                <p>Complete rituals to progress and survive.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🎧 Immersive Horror</h3>
+                <p>Dark atmosphere, tension and psychological horror.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="install-section">
+
+        <h2>Ready To Enter The Bungalow?</h2>
+
+        <p class="install-size">
+            Windows 10 / Windows 11 • 500 MB Download
+        </p>
+
+        <button class="download-btn"
+        onclick="window.location.href='https://installsannata.netlify.app/windows.html'">
+            Install Sannata
+        </button>
+
+    </section>
+
+</div>
+
+<footer>
+
+    <h2>UnrealPhobia Games</h2>
+
+    <br>
+
+    <p>
+        Crafting Psychological Horror Experiences
+    </p>
+
+</footer>
+
+<script>
+
+const buttons = document.querySelectorAll('.download-btn');
+
+buttons.forEach(button=>{
+    button.addEventListener('mouseenter',()=>{
+        button.style.transform='translateY(-5px)';
+    });
+});
+
+</script>
+
+</body>
+</html>
