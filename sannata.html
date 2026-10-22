@@ -6,7 +6,6 @@
 
 <title>Install Sannata</title>
 
-https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
 
 <style>
 
@@ -35,6 +34,17 @@ body{
     padding:40px 20px;
 }
 
+.hero-banner{
+    width:100%;
+    max-width:1000px;
+    height:500px;
+    object-fit:cover;
+    border-radius:25px;
+    margin-bottom:35px;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 40px rgba(52,255,139,.15);
+}
+
 .hero{
     text-align:center;
     padding:100px 20px 70px;
@@ -50,6 +60,23 @@ body{
     max-width:700px;
     margin:auto;
     line-height:1.8;
+}
+
+.banner-section{
+    width:100%;
+    padding:40px 0;
+}
+
+.game-banner{
+    width:100%;
+    max-width:1200px;
+    height:500px;
+    object-fit:cover;
+    display:block;
+    margin:auto;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 40px rgba(52,255,139,.15);
 }
 
 .download-btn{
@@ -146,154 +173,4 @@ footer p{
 
 </style>
 </head>
-<body>
-
-<div class="container">
-
-    <section class="hero">
-
-        <h1>SANNATA</h1>
-
-        <p>
-            Experience psychological horror inside a haunted royal Indian bungalow.
-            Escape the house, complete rituals and avoid the creature stalking
-            you through the darkness.
-        </p>
-
-        <button class="download-btn"
-        onclick="window.location.href='https://installsannata.netlify.app'">
-            Download Now
-        </button>
-
-    </section>
-
-    <div class="grid">
-
-        <div class="card">
-            <h2>Game Information</h2>
-
-            <p>
-                Genre: Horror<br>
-                Engine: Unity<br>
-                Platform: Windows 10/11<br>
-                Developer: UnrealPhobia Games
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Download Details</h2>
-
-            <p>
-                Download Size: 500 MB<br>
-                Installed Size: 1 GB<br>
-                Price: FREE
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Status</h2>
-
-            <p>
-                Available Now ✅<br>
-                Stable Release ✅<br>
-                Public Download ✅
-            </p>
-        </div>
-
-    </div>
-
-    <section class="about">
-
-        <h2 style="color:#34ff8b;">About Sannata</h2>
-
-        <br>
-
-        <p>
-            Sannata is a first-person horror experience that places you inside
-            a mysterious royal Indian bungalow.
-
-            Something lives inside the house.
-
-            To survive, you must explore dark hallways, uncover secrets,
-            perform rituals, and find a way out before the creature catches you.
-
-            Every room hides another mystery and every sound could be your last.
-        </p>
-
-    </section>
-
-    <section>
-
-        <br><br>
-
-        <h2 style="color:#34ff8b;">Features</h2>
-
-        <div class="features">
-
-            <div class="feature">
-                <h3>🏚 Royal Haunted Bungalow</h3>
-                <p>Explore a large atmospheric horror environment.</p>
-            </div>
-
-            <div class="feature">
-                <h3>👹 Monster Chase System</h3>
-                <p>A dangerous entity constantly hunts you.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🕯 Ritual Gameplay</h3>
-                <p>Complete rituals to progress and survive.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🎧 Immersive Horror</h3>
-                <p>Dark atmosphere, tension and psychological horror.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="install-section">
-
-        <h2>Ready To Enter The Bungalow?</h2>
-
-        <p class="install-size">
-            Windows 10 / Windows 11 • 500 MB Download
-        </p>
-
-        <button class="download-btn"
-        onclick="window.location.href='https://installsannata.netlify.app/windows.html'">
-            Install Sannata
-        </button>
-
-    </section>
-
-</div>
-
-<footer>
-
-    <h2>UnrealPhobia Games</h2>
-
-    <br>
-
-    <p>
-        Crafting Psychological Horror Experiences
-    </p>
-
-</footer>
-
-<script>
-
-const buttons = document.querySelectorAll('.download-btn');
-
-buttons.forEach(button=>{
-    button.addEventListener('mouseenter',()=>{
-        button.style.transform='translateY(-5px)';
-    });
-});
-
-</script>
-
-</body>
 </html>
