@@ -1,18 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Signal Green | UP Games</title>
+<title>Signal Green | UnrealPhobia Games</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:'Noto Serif JP',serif;
 }
 
 html{
@@ -25,7 +27,13 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Hero */
+body::-webkit-scrollbar{
+width:8px;
+}
+
+body::-webkit-scrollbar-thumb{
+background:#00ff84;
+}
 
 .hero{
 height:100vh;
@@ -33,6 +41,7 @@ position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
 overflow:hidden;
 }
 
@@ -41,7 +50,7 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-filter:brightness(.3);
+filter:brightness(.25);
 }
 
 .overlay{
@@ -51,83 +60,101 @@ height:100%;
 background:
 linear-gradient(
 180deg,
-rgba(0,0,0,.3),
-rgba(0,0,0,.8),
-rgba(0,0,0,1)
+rgba(0,0,0,.2),
+rgba(0,0,0,.7),
+#050505
 );
 }
 
-.signal-glow{
+.signal{
 position:absolute;
-top:15%;
-right:15%;
-width:120px;
-height:120px;
+right:10%;
+top:20%;
+width:140px;
+height:140px;
 border-radius:50%;
 background:#00ff84;
-filter:blur(60px);
-animation:pulse 2s infinite;
+filter:blur(70px);
+animation:pulse 3s infinite;
 }
 
-.content{
+.hero-content{
 position:relative;
-z-index:2;
-text-align:center;
+z-index:3;
+max-width:1000px;
 padding:20px;
-max-width:900px;
 }
 
-.content h1{
+.jp{
+font-size:1.5rem;
+color:#00ff84;
+letter-spacing:10px;
+}
+
+.hero h1{
 font-size:7rem;
-letter-spacing:8px;
-text-transform:uppercase;
+letter-spacing:12px;
+margin-top:20px;
 }
 
-.content p{
-margin-top:20px;
+.hero p{
+margin-top:25px;
 font-size:1.3rem;
-color:#cfcfcf;
+color:#d0d0d0;
+line-height:1.8;
 }
 
 .btn{
-margin-top:30px;
+display:inline-block;
+margin-top:35px;
 padding:16px 40px;
-border:none;
-border-radius:50px;
 background:#00ff84;
 color:black;
 font-weight:bold;
+border:none;
+border-radius:50px;
 cursor:pointer;
 transition:.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 30px #00ff84;
+box-shadow:0 0 40px #00ff84;
 }
 
-/* Quote Section */
+section{
+padding:120px 10%;
+}
 
-.quote{
-padding:140px 10%;
+.title{
+font-size:3rem;
+margin-bottom:30px;
 text-align:center;
-}
-
-.quote h2{
-font-size:5rem;
-max-width:1000px;
-margin:auto;
-line-height:1.1;
 }
 
 .green{
 color:#00ff84;
 }
 
-/* Story */
+.notice{
+display:flex;
+justify-content:center;
+}
+
+.notice-box{
+max-width:900px;
+background:#0a0a0a;
+border:1px solid rgba(0,255,132,.2);
+padding:40px;
+border-radius:25px;
+}
+
+.notice-box p{
+margin:15px 0;
+color:#d0d0d0;
+}
 
 .story{
-padding:120px 10%;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:60px;
@@ -141,139 +168,127 @@ border-radius:25px;
 
 .story-text h2{
 font-size:3rem;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .story-text p{
 line-height:2;
-font-size:1.1rem;
 color:#cfcfcf;
 }
 
-/* Mystery Files */
-
-.files{
-padding:120px 10%;
-}
-
-.files h2{
-font-size:3rem;
-margin-bottom:40px;
+.quote{
 text-align:center;
 }
 
-.file-grid{
+.quote h2{
+font-size:4rem;
+line-height:1.3;
+}
+
+.reports{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
-.file{
-background:rgba(255,255,255,.04);
-backdrop-filter:blur(20px);
-border:1px solid rgba(0,255,132,.15);
-padding:30px;
-border-radius:20px;
-transition:.4s;
+.report{
+background:#0c0c0c;
+border-left:3px solid #00ff84;
+padding:25px;
+border-radius:10px;
 }
 
-.file:hover{
-transform:translateY(-10px);
-border-color:#00ff84;
-}
-
-.file span{
-display:block;
+.report h3{
 color:#00ff84;
-font-size:.8rem;
 margin-bottom:10px;
 }
 
-/* Development */
-
-.dev{
-padding:120px 10%;
-text-align:center;
-}
-
-.dev h2{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-.dev-grid{
-margin-top:50px;
+.features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.dev-card{
+.card{
+background:#101010;
 padding:30px;
 border-radius:20px;
-background:#101010;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
 }
 
-.dev-card h3{
+.card:hover{
+transform:translateY(-10px);
+border-color:#00ff84;
+}
+
+.card h3{
 color:#00ff84;
 margin-bottom:10px;
 }
 
-/* Countdown Style */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.coming{
+text-align:center;
+}
 
 .status{
-padding:120px 10%;
-text-align:center;
-}
-
-.status-box{
-max-width:800px;
+max-width:900px;
 margin:auto;
-background:#0a0a0a;
-border:1px solid rgba(0,255,132,.15);
+background:black;
 padding:50px;
-border-radius:30px;
+border-radius:20px;
+border:1px solid rgba(0,255,132,.2);
 }
 
-.status-box h3{
+.status h2{
 font-size:4rem;
 color:#00ff84;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-/* Footer CTA */
-
-.footer-cta{
-padding:150px 10%;
-text-align:center;
-position:relative;
-}
-
-.footer-cta h2{
-font-size:5rem;
-line-height:1;
-}
-
-.footer-cta p{
-margin-top:25px;
-color:#bdbdbd;
+.countdown{
 font-size:1.2rem;
+color:#bababa;
 }
 
-.footer-cta .btn{
-margin-top:40px;
+.final{
+text-align:center;
+padding:180px 10%;
 }
 
-/* Footer */
+.final h2{
+font-size:5rem;
+line-height:1.2;
+}
+
+.final p{
+margin-top:25px;
+font-size:1.2rem;
+color:#bdbdbd;
+}
 
 footer{
-padding:40px;
+padding:50px;
 text-align:center;
-color:#777;
 border-top:1px solid rgba(255,255,255,.05);
+color:#777;
 }
 
 @keyframes pulse{
+
 0%{
 opacity:.5;
 }
@@ -285,84 +300,70 @@ opacity:1;
 100%{
 opacity:.5;
 }
+
 }
 
 @media(max-width:900px){
-.content h1{
-font-size:4rem;
-}
 
-.quote h2{
-font-size:3rem;
+.hero h1{
+font-size:4rem;
 }
 
 .story{
 grid-template-columns:1fr;
 }
 
-.footer-cta h2{
+.quote h2{
+font-size:2.5rem;
+}
+
+.final h2{
 font-size:3rem;
 }
+
 }
 
-@media(max-width:600px){
-.content h1{
-font-size:2.7rem;
-letter-spacing:4px;
-}
-
-.content p{
-font-size:1rem;
-}
-
-.btn{
-padding:14px 28px;
-}
-
-.quote h2{
-font-size:2.3rem;
-}
-
-.story-text h2{
-font-size:2.5rem;
-}
-
-.files h2,
-.dev h2{
-font-size:2.5rem;
-}
-
-.status-box h3{
-font-size:2.5rem;
-}
-
-.footer-cta h2{
-font-size:2.5rem;
-}
-}
 </style>
 </head>
-
 <body>
 
 <section class="hero">
 
-<img src="cart1.png" alt="Signal Green railway station">
+<img src="station.jpg">
 
 <div class="overlay"></div>
 
-<div class="signal-glow"></div>
+<div class="signal"></div>
 
-<div class="content">
+<div class="hero-content">
+
+<div class="jp">信号の緑</div>
 
 <h1>SIGNAL GREEN</h1>
 
 <p>
-Some trains should never arrive.
+
+108 Kilometers From Tokyo
+
+<br>
+
+An aging railway station watches Mount Fuji.
+
+<br>
+
+At 3:33 AM a signal turns green.
+
+<br>
+
+No train is scheduled.
+
+<br>
+
+Yet something arrives.
+
 </p>
 
-<button class="btn"
-onclick="document.querySelector('.quote').scrollIntoView()">
+<button class="btn" onclick="document.querySelector('.quote').scrollIntoView()">
 ENTER THE STATION
 </button>
 
@@ -373,183 +374,242 @@ ENTER THE STATION
 <section class="quote">
 
 <h2>
-THE TRAIN CLOSED IN
-<span class="green">1889</span>.
 
-<br><br>
+"The station remembers."
 
-BUT THE CURSE DID NOT
+<br>
+
+<span class="green">The signal must stay green.</span>
+
 </h2>
+
+</section>
+
+<section>
+
+<div class="title">JR INCIDENT REPORT</div>
+
+<div class="notice">
+
+<div class="notice-box">
+
+<p><b>Status:</b> Active Investigation</p>
+
+<p><b>Location:</b> Midori Station</p>
+
+<p><b>Distance:</b> 108 KM From Tokyo</p>
+
+<p><b>Signal:</b> Unexplained Green Activation</p>
+
+<p><b>Threat Level:</b> Unknown</p>
+
+</div>
+
+</div>
 
 </section>
 
 <section class="story">
 
-<img src="cart1.png" alt="Blackwood railway station">
+<img src="fuji.jpg">
 
 <div class="story-text">
 
-<h2>THE STORY</h2>
+<h2>物語 | THE STORY</h2>
 
 <p>
-  Every midnight at excatly 1:00 AM,
 
-  at BlacksWood railway station,
+Hidden among mountain forests and overlooking Mount Fuji,
 
-  a train arrives,
+Midori Station serves hundreds of passengers every day.
 
-  problem is not tha train,
+Everything appears normal.
 
-  problem is that train was officially discontinued in 1889,
+Tourists arrive.
 
-  as gurd of the station, you have to keep the signal green,
+Trains depart.
 
-  don't stop it, <span style="color: green;"><b>Keep the signal Green</b></span>
+Signals operate on schedule.
+
+Until 3:33 AM.
+
+When the platform signal turns green.
+
+No train exists on the timetable.
+
+No operator reports an arrival.
+
+Yet a silent train emerges from the darkness.
+
+Passengers who board are never seen again.
+
+As the station's final night guard,
+
+your job is simple.
+
+<span class="green"><b>Keep The Signal Green.</b></span>
+
 </p>
 
 </div>
 
 </section>
 
-<section class="files">
+<section>
 
-<h2>KNOWN REPORTS</h2>
+<div class="title">INCIDENT REPORTS</div>
 
-<div class="file-grid">
+<div class="reports">
 
-<div class="file">
-<span>REPORT 001</span>
-Strange whistles heard through Blackwood Forest.
+<div class="report">
+<h3>REPORT 001</h3>
+Last train observed arriving with no recorded route.
 </div>
 
-<div class="file">
-<span>REPORT 002</span>
-Witnesses observed green signal lights.
+<div class="report">
+<h3>REPORT 002</h3>
+Platform cameras disabled at exactly 03:33 AM.
 </div>
 
-<div class="file">
-<span>REPORT 003</span>
-Passengers missing after boarding.
+<div class="report">
+<h3>REPORT 003</h3>
+Passengers heard voices coming from nearby forest.
 </div>
 
-<div class="file">
-<span>REPORT 004</span>
-Train identified by no official railway records.
+<div class="report">
+<h3>REPORT 004</h3>
+Mount Fuji disappeared briefly from skyline view.
 </div>
 
+<div class="report">
+<h3>REPORT 005</h3>
+Signal remained active during a complete power outage.
 </div>
 
-</section>
-
-<section class="dev">
-
-<h2>PROJECT HARMONY</h2>
-
-<p>Current Development Status</p>
-
-<div class="dev-grid">
-
-<div class="dev-card">
-<h3>✓ Environment</h3>
-Station development in progress
-</div>
-
-<div class="dev-card">
-<h3>✓ Core Story</h3>
-Narrative foundation completed
-</div>
-
-<div class="dev-card">
-<h3>⌛ Signal System</h3>
-Under development
-</div>
-
-<div class="dev-card">
-<h3>⌛ Horror Events</h3>
-Being implemented
+<div class="report">
+<h3>REPORT 006</h3>
+Unidentified train detected. Ownership unknown.
 </div>
 
 </div>
 
 </section>
 
-<section class="status">
+<section>
 
-<div class="status-box">
+<div class="title">FEATURES</div>
 
-<h3>SIGNAL ACTIVE</h3>
+<div class="features">
 
-<p>
+<div class="card">
+<h3>Dynamic Weather</h3>
+Rain, fog and changing visibility.
+</div>
+
+<div class="card">
+<h3>Japanese Horror</h3>
+Inspired by railway folklore and urban legends.
+</div>
+
+<div class="card">
+<h3>Signal Management</h3>
+Keep systems operational throughout the night.
+</div>
+
+<div class="card">
+<h3>Psychological Events</h3>
+Reality changes around the station.
+</div>
+
+<div class="card">
+<h3>Multiple Endings</h3>
+Different outcomes based on your actions.
+</div>
+
+<div class="card">
+<h3>Immersive Atmosphere</h3>
+A quiet station hiding something impossible.
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="title">GALLERY</div>
+
+<div class="gallery">
+
+<img src="gallery1.jpg">
+<img src="gallery2.jpg">
+<img src="gallery3.jpg">
+
+</div>
+
+</section>
+
+<section class="coming">
+
+<div class="status">
+
+<h2>COMING SOON</h2>
+
+<p class="countdown">
+
+The next train has not yet arrived.
+
+<br><br>
+
 Signal Green is currently under development.
-More information will arrive with the next train.
+
+More information will arrive with the next scheduled anomaly.
+
 </p>
 
 </div>
 
 </section>
 
-<section class="footer-cta">
+<section class="final">
 
 <h2>
-THE SIGNAL IS GREEN.
+
+THE SIGNAL IS GREEN
+
+<br>
+
+信号は緑です
+
 </h2>
 
 <p>
-Will you wait...
 
-or will you board?
+The train has arrived.
+
+<br>
+
+Will you remain on the platform,
+
+or board it?
+
 </p>
 
-<button class="btn" onclick="alert('We Will notify You When Game Will Launche')">
+<button class="btn" onclick="alert('You will be notified when Signal Green launches.')">
 FOLLOW DEVELOPMENT
 </button>
 
 </section>
 
 <footer>
-© UP Games • Signal Green
+
+© 2026 UnrealPhobia Games
+
+<br>
+
+SIGNAL GREEN
+
 </footer>
-
-<script>
-const cards=document.querySelectorAll(
-'.file,.dev-card,.story img,.story-text'
-);
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.animate([
-{
-opacity:0,
-transform:'translateY(60px)'
-},
-{
-opacity:1,
-transform:'translateY(0px)'
-}
-],{
-duration:1000,
-fill:'forwards'
-});
-
-observer.unobserve(entry.target);
-}
-});
-});
-
-cards.forEach(card=>observer.observe(card));
-
-window.addEventListener("mousemove",(e)=>{
-const glow=document.querySelector(".signal-glow");
-
-glow.style.transform=
-`translate(
-${e.clientX*0.01}px,
-${e.clientY*0.01}px
-)`;
-});
-</script>
 
 </body>
 </html>
-```
