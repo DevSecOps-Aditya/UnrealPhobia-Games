@@ -14,7 +14,6 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Noto Serif JP',serif;
 }
 
 html{
@@ -24,6 +23,7 @@ scroll-behavior:smooth;
 body{
 background:#050505;
 color:white;
+font-family:'Noto Serif JP',serif;
 overflow-x:hidden;
 }
 
@@ -35,73 +35,68 @@ body::-webkit-scrollbar-thumb{
 background:#00ff84;
 }
 
+/* HERO */
+
 .hero{
-height:100vh;
-position:relative;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
+padding:40px;
 overflow:hidden;
 }
 
-.hero img{
+.hero::before{
+content:"";
 position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-filter:brightness(.25);
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
+inset:0;
 background:
-linear-gradient(
-180deg,
-rgba(0,0,0,.2),
-rgba(0,0,0,.7),
-#050505
-);
+radial-gradient(circle at top right,
+rgba(0,255,132,.15),
+transparent 40%);
 }
 
-.signal{
+.signal-glow{
 position:absolute;
 right:10%;
-top:20%;
-width:140px;
-height:140px;
-border-radius:50%;
+top:15%;
+width:250px;
+height:250px;
 background:#00ff84;
-filter:blur(70px);
+border-radius:50%;
+filter:blur(90px);
+opacity:.4;
 animation:pulse 3s infinite;
 }
 
 .hero-content{
 position:relative;
-z-index:3;
+z-index:2;
 max-width:1000px;
-padding:20px;
+}
+
+.poster{
+width:650px;
+max-width:90%;
+filter:
+drop-shadow(0 0 30px rgba(0,255,132,.2))
+drop-shadow(0 0 80px rgba(0,255,132,.15));
 }
 
 .jp{
-font-size:1.5rem;
-color:#00ff84;
-letter-spacing:10px;
-}
-
-.hero h1{
-font-size:7rem;
-letter-spacing:12px;
 margin-top:20px;
+letter-spacing:8px;
+color:#00ff84;
+font-size:1rem;
 }
 
-.hero p{
+.subtitle{
 margin-top:25px;
-font-size:1.3rem;
+line-height:2;
+font-size:1.15rem;
 color:#d0d0d0;
-line-height:1.8;
 }
 
 .btn{
@@ -110,58 +105,70 @@ margin-top:35px;
 padding:16px 40px;
 background:#00ff84;
 color:black;
+text-decoration:none;
 font-weight:bold;
-border:none;
 border-radius:50px;
-cursor:pointer;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 40px #00ff84;
+transform:translateY(-5px);
+box-shadow:0 0 30px #00ff84;
 }
+
+/* SECTION */
 
 section{
 padding:120px 10%;
 }
 
 .title{
-font-size:3rem;
-margin-bottom:30px;
 text-align:center;
+font-size:3rem;
+margin-bottom:50px;
 }
 
 .green{
 color:#00ff84;
 }
 
-.notice{
+/* WARNING */
+
+.warning{
 display:flex;
 justify-content:center;
 }
 
-.notice-box{
+.warning-box{
+width:100%;
 max-width:900px;
-background:#0a0a0a;
-border:1px solid rgba(0,255,132,.2);
 padding:40px;
+background:#0a0a0a;
+border:1px solid rgba(0,255,132,.18);
 border-radius:25px;
+text-align:center;
 }
 
-.notice-box p{
-margin:15px 0;
-color:#d0d0d0;
+.warning-box h2{
+margin-bottom:20px;
+color:#00ff84;
 }
+
+.warning-box p{
+line-height:2;
+color:#cfcfcf;
+}
+
+/* STORY */
 
 .story{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
+gap:50px;
 align-items:center;
 }
 
-.story img{
+.story-poster img{
 width:100%;
 border-radius:25px;
 }
@@ -173,29 +180,27 @@ margin-bottom:20px;
 
 .story-text p{
 line-height:2;
-color:#cfcfcf;
+color:#d0d0d0;
 }
 
-.quote{
-text-align:center;
-}
+/* REPORTS */
 
-.quote h2{
-font-size:4rem;
-line-height:1.3;
-}
-
-.reports{
+.report-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 .report{
-background:#0c0c0c;
-border-left:3px solid #00ff84;
+background:#0b0b0b;
 padding:25px;
+border-left:4px solid #00ff84;
 border-radius:10px;
+transition:.3s;
+}
+
+.report:hover{
+transform:translateY(-5px);
 }
 
 .report h3{
@@ -203,66 +208,68 @@ color:#00ff84;
 margin-bottom:10px;
 }
 
-.features{
+/* FEATURES */
+
+.feature-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.card{
+.feature{
 background:#101010;
 padding:30px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
 transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
+.feature:hover{
+transform:translateY(-8px);
 border-color:#00ff84;
 }
 
-.card h3{
+.feature h3{
 color:#00ff84;
 margin-bottom:10px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+/* STATUS */
+
+.status-box{
+max-width:900px;
+margin:auto;
+background:black;
+padding:40px;
+border-radius:20px;
+border:1px solid rgba(0,255,132,.2);
+font-family:Consolas,monospace;
+line-height:2;
 }
 
-.gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:20px;
+.status-box span{
+color:#00ff84;
 }
+
+/* COMING SOON */
 
 .coming{
 text-align:center;
 }
 
-.status{
-max-width:900px;
-margin:auto;
-background:black;
-padding:50px;
-border-radius:20px;
-border:1px solid rgba(0,255,132,.2);
-}
-
-.status h2{
+.coming h2{
 font-size:4rem;
 color:#00ff84;
 margin-bottom:20px;
 }
 
-.countdown{
+.coming p{
+color:#cfcfcf;
 font-size:1.2rem;
-color:#bababa;
+line-height:2;
 }
+
+/* FINAL */
 
 .final{
 text-align:center;
@@ -276,48 +283,73 @@ line-height:1.2;
 
 .final p{
 margin-top:25px;
-font-size:1.2rem;
-color:#bdbdbd;
+line-height:2;
+color:#cfcfcf;
+font-size:1.15rem;
 }
 
+/* FOOTER */
+
 footer{
-padding:50px;
+padding:80px 20px;
+border-top:1px solid rgba(255,255,255,.08);
 text-align:center;
-border-top:1px solid rgba(255,255,255,.05);
-color:#777;
 }
+
+.footer-logo{
+width:220px;
+opacity:.8;
+margin-bottom:20px;
+}
+
+footer p{
+color:#888;
+}
+
+/* ANIMATION */
 
 @keyframes pulse{
 
 0%{
-opacity:.5;
+opacity:.3;
 }
 
 50%{
-opacity:1;
+opacity:.6;
 }
 
 100%{
-opacity:.5;
+opacity:.3;
 }
 
 }
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+}
+
+/* MOBILE */
 
 @media(max-width:900px){
-
-.hero h1{
-font-size:4rem;
-}
 
 .story{
 grid-template-columns:1fr;
 }
 
-.quote h2{
-font-size:2.5rem;
+.story-text h2{
+font-size:2.4rem;
+}
+
+.title{
+font-size:2.4rem;
 }
 
 .final h2{
+font-size:3rem;
+}
+
+.coming h2{
 font-size:3rem;
 }
 
@@ -329,29 +361,27 @@ font-size:3rem;
 
 <section class="hero">
 
-<img src="station.jpg">
-
-<div class="overlay"></div>
-
-<div class="signal"></div>
+<div class="signal-glow"></div>
 
 <div class="hero-content">
 
-<div class="jp">信号の緑</div>
+<img src="cart1.png" class="poster">
 
-<h1>SIGNAL GREEN</h1>
+<div class="jp">
+信号の緑
+</div>
 
-<p>
+<p class="subtitle">
 
 108 Kilometers From Tokyo
 
+<br><br>
+
+An aging railway station beneath Mount Fuji.
+
 <br>
 
-An aging railway station watches Mount Fuji.
-
-<br>
-
-At 3:33 AM a signal turns green.
+At exactly 3:33 AM a signal turns green.
 
 <br>
 
@@ -359,49 +389,45 @@ No train is scheduled.
 
 <br>
 
-Yet something arrives.
+Yet something always arrives.
 
 </p>
 
-<button class="btn" onclick="document.querySelector('.quote').scrollIntoView()">
+<a href="#story" class="btn">
 ENTER THE STATION
-</button>
+</a>
 
 </div>
-
-</section>
-
-<section class="quote">
-
-<h2>
-
-"The station remembers."
-
-<br>
-
-<span class="green">The signal must stay green.</span>
-
-</h2>
 
 </section>
 
 <section>
 
-<div class="title">JR INCIDENT REPORT</div>
+<div class="warning reveal">
 
-<div class="notice">
+<div class="warning-box">
 
-<div class="notice-box">
+<h2>⚠ RAILWAY NOTICE</h2>
 
-<p><b>Status:</b> Active Investigation</p>
+<p>
 
-<p><b>Location:</b> Midori Station</p>
+Please remain behind the yellow line.
 
-<p><b>Distance:</b> 108 KM From Tokyo</p>
+<br>
 
-<p><b>Signal:</b> Unexplained Green Activation</p>
+Do not board unscheduled trains.
 
-<p><b>Threat Level:</b> Unknown</p>
+<br>
+
+Do not approach Platform 3 after 03:33 AM.
+
+<br>
+
+If the signal turns green unexpectedly,
+
+notify station staff immediately.
+
+</p>
 
 </div>
 
@@ -409,33 +435,39 @@ ENTER THE STATION
 
 </section>
 
-<section class="story">
+<section id="story">
 
-<img src="fuji.jpg">
+<div class="story">
 
-<div class="story-text">
+<div class="story-poster reveal">
+
+<img src="cart1.png">
+
+</div>
+
+<div class="story-text reveal">
 
 <h2>物語 | THE STORY</h2>
 
 <p>
 
-Hidden among mountain forests and overlooking Mount Fuji,
+Hidden deep within Japan's mountain forests,
 
-Midori Station serves hundreds of passengers every day.
+Midori Station quietly serves passengers every day.
+
+Tourists visit.
+
+Residents commute.
+
+Mount Fuji watches from the horizon.
 
 Everything appears normal.
 
-Tourists arrive.
-
-Trains depart.
-
-Signals operate on schedule.
-
 Until 3:33 AM.
 
-When the platform signal turns green.
+The station signal suddenly turns green.
 
-No train exists on the timetable.
+No train appears on the timetable.
 
 No operator reports an arrival.
 
@@ -443,9 +475,11 @@ Yet a silent train emerges from the darkness.
 
 Passengers who board are never seen again.
 
-As the station's final night guard,
+Tonight,
 
-your job is simple.
+you are the station's final night guard.
+
+<br><br>
 
 <span class="green"><b>Keep The Signal Green.</b></span>
 
@@ -453,42 +487,46 @@ your job is simple.
 
 </div>
 
+</div>
+
 </section>
 
 <section>
 
-<div class="title">INCIDENT REPORTS</div>
+<h2 class="title reveal">
+INCIDENT REPORTS
+</h2>
 
-<div class="reports">
+<div class="report-grid">
 
-<div class="report">
+<div class="report reveal">
 <h3>REPORT 001</h3>
-Last train observed arriving with no recorded route.
-</div>
-
-<div class="report">
-<h3>REPORT 002</h3>
 Platform cameras disabled at exactly 03:33 AM.
 </div>
 
-<div class="report">
+<div class="report reveal">
+<h3>REPORT 002</h3>
+Unscheduled train arrival detected.
+</div>
+
+<div class="report reveal">
 <h3>REPORT 003</h3>
-Passengers heard voices coming from nearby forest.
+Passenger count increased despite an empty platform.
 </div>
 
-<div class="report">
+<div class="report reveal">
 <h3>REPORT 004</h3>
-Mount Fuji disappeared briefly from skyline view.
+Mount Fuji temporarily disappeared from view.
 </div>
 
-<div class="report">
+<div class="report reveal">
 <h3>REPORT 005</h3>
-Signal remained active during a complete power outage.
+Signal remained green during power failure.
 </div>
 
-<div class="report">
+<div class="report reveal">
 <h3>REPORT 006</h3>
-Unidentified train detected. Ownership unknown.
+Train ownership could not be identified.
 </div>
 
 </div>
@@ -497,38 +535,40 @@ Unidentified train detected. Ownership unknown.
 
 <section>
 
-<div class="title">FEATURES</div>
+<h2 class="title reveal">
+FEATURES
+</h2>
 
-<div class="features">
+<div class="feature-grid">
 
-<div class="card">
+<div class="feature reveal">
+<h3>Japanese Psychological Horror</h3>
+Atmosphere over jumpscares.
+</div>
+
+<div class="feature reveal">
 <h3>Dynamic Weather</h3>
 Rain, fog and changing visibility.
 </div>
 
-<div class="card">
-<h3>Japanese Horror</h3>
-Inspired by railway folklore and urban legends.
-</div>
-
-<div class="card">
+<div class="feature reveal">
 <h3>Signal Management</h3>
-Keep systems operational throughout the night.
+Maintain station operations.
 </div>
 
-<div class="card">
-<h3>Psychological Events</h3>
-Reality changes around the station.
+<div class="feature reveal">
+<h3>Entity Encounters</h3>
+Strange visitors after midnight.
 </div>
 
-<div class="card">
+<div class="feature reveal">
 <h3>Multiple Endings</h3>
-Different outcomes based on your actions.
+Your choices matter.
 </div>
 
-<div class="card">
-<h3>Immersive Atmosphere</h3>
-A quiet station hiding something impossible.
+<div class="feature reveal">
+<h3>Rich Lore</h3>
+Discover the station's history.
 </div>
 
 </div>
@@ -537,13 +577,33 @@ A quiet station hiding something impossible.
 
 <section>
 
-<div class="title">GALLERY</div>
+<h2 class="title reveal">
+PROJECT HARMONY
+</h2>
 
-<div class="gallery">
+<div class="status-box reveal">
 
-<img src="gallery1.jpg">
-<img src="gallery2.jpg">
-<img src="gallery3.jpg">
+<span>[✓]</span> Core Story Complete
+
+<br>
+
+<span>[✓]</span> Environment Production
+
+<br>
+
+<span>[✓]</span> Lore Documentation
+
+<br>
+
+<span>[⌛]</span> Signal System
+
+<br>
+
+<span>[⌛]</span> Horror Events
+
+<br>
+
+<span>[⌛]</span> Ghost Train Sequence
 
 </div>
 
@@ -551,29 +611,25 @@ A quiet station hiding something impossible.
 
 <section class="coming">
 
-<div class="status">
+<h2 class="reveal">
+COMING SOON
+</h2>
 
-<h2>COMING SOON</h2>
-
-<p class="countdown">
-
-The next train has not yet arrived.
-
-<br><br>
+<p class="reveal">
 
 Signal Green is currently under development.
 
-More information will arrive with the next scheduled anomaly.
+<br>
+
+More information will arrive with the next train.
 
 </p>
-
-</div>
 
 </section>
 
 <section class="final">
 
-<h2>
+<h2 class="reveal">
 
 THE SIGNAL IS GREEN
 
@@ -583,33 +639,92 @@ THE SIGNAL IS GREEN
 
 </h2>
 
-<p>
+<p class="reveal">
 
-The train has arrived.
+03:33 AM
+
+<br><br>
+
+The signal changed.
 
 <br>
 
-Will you remain on the platform,
+The train arrived.
 
-or board it?
+<br>
+
+Nobody was waiting.
+
+<br>
+
+Yet somebody boarded.
 
 </p>
 
-<button class="btn" onclick="alert('You will be notified when Signal Green launches.')">
+<a href="#" class="btn reveal">
 FOLLOW DEVELOPMENT
-</button>
+</a>
 
 </section>
 
 <footer>
 
-© 2026 UnrealPhobia Games
+<img src="cart1.png" class="footer-logo">
+
+<p>
+
+Signal Green
 
 <br>
 
-SIGNAL GREEN
+A Japanese Psychological Horror Experience
+
+<br><br>
+
+© 2026 UnrealPhobia Games
+
+</p>
 
 </footer>
+
+<script>
+
+const revealElements=document.querySelectorAll('.reveal');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate(
+[
+{
+opacity:0,
+transform:'translateY(40px)'
+},
+{
+opacity:1,
+transform:'translateY(0)'
+}
+],
+{
+duration:900,
+fill:'forwards'
+}
+);
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+});
+
+revealElements.forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
