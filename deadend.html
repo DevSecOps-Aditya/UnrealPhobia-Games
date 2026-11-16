@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DEADEND | Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    background:#000;
+}
+
+/* BACKGROUND POSTER */
+
+.bg{
+    position:fixed;
+    inset:0;
+    background:url('poster.png') center center/cover no-repeat;
+    transform:scale(1.05);
+}
+
+/* DARK OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.85)
+    );
+}
+
+/* CYBER GRID */
+
+.grid{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,255,255,.07) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(0,255,255,.07) 1px,
+    transparent 1px);
+
+    background-size:50px 50px;
+
+    animation:gridMove 15s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(50px);
+    }
+}
+
+/* CONTENT */
+
+.container{
+    position:relative;
+    z-index:10;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+    text-align:center;
+}
+
+/* GAME TITLE */
+
+.title{
+
+    font-size:8rem;
+    font-weight:900;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 10px #ff004c,
+    0 0 30px #ff004c,
+    0 0 60px #ff004c;
+
+    animation:flicker 3s infinite;
+}
+
+/* GLITCH */
+
+.title::before,
+.title::after{
+
+    content:"DEADEND";
+
+    position:absolute;
+}
+
+.title::before{
+    color:#00ffff;
+    transform:translate(-4px,0);
+    opacity:.5;
+}
+
+.title::after{
+    color:#ff00ff;
+    transform:translate(4px,0);
+    opacity:.5;
+}
+
+@keyframes flicker{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:.8;
+    }
+
+    50%{
+        opacity:.6;
+    }
+
+    80%{
+        opacity:.9;
+    }
+}
+
+.tagline{
+
+    margin-top:15px;
+
+    color:#ffffffcc;
+
+    letter-spacing:8px;
+
+    font-size:1rem;
+}
+
+/* COMING SOON */
+
+.coming{
+
+    margin-top:40px;
+
+    color:#00ffff;
+
+    font-size:2rem;
+
+    letter-spacing:8px;
+
+    text-shadow:
+    0 0 10px cyan,
+    0 0 25px cyan;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+
+    margin-top:30px;
+
+    display:flex;
+    gap:20px;
+}
+
+.box{
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:20px;
+
+    min-width:110px;
+
+    border-radius:15px;
+}
+
+.box h2{
+
+    color:white;
+    font-size:2rem;
+}
+
+.box span{
+
+    color:#00ffff;
+}
+
+/* FOOTER */
+
+.footer{
+
+    position:absolute;
+
+    bottom:25px;
+
+    text-align:center;
+
+    color:white;
+}
+
+.footer p{
+
+    margin:5px;
+}
+
+.unreal{
+
+    font-family:cursive;
+    font-size:1.3rem;
+}
+
+.made{
+
+    margin-top:10px;
+    color:#00ffff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+    font-size:4rem;
+}
+
+.countdown{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.box{
+    min-width:80px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="overlay"></div>
+
+<div class="grid"></div>
+
+<div class="container">
+
+<div class="title">
+DEADEND
+</div>
+
+<div class="tagline">
+WELCOME TO ORRORA CITY
+</div>
+
+<div class="coming">
+COMING SOON
+</div>
+
+<div class="countdown">
+
+<div class="box">
+<h2 id="days">00</h2>
+<span>DAYS</span>
+</div>
+
+<div class="box">
+<h2 id="hours">00</h2>
+<span>HRS</span>
+</div>
+
+<div class="box">
+<h2 id="mins">00</h2>
+<span>MIN</span>
+</div>
+
+<div class="box">
+<h2 id="secs">00</h2>
+<span>SEC</span>
+</div>
+
+</div>
+
+<div class="footer">
+
+<p class="unreal">
+UnrealPhobia Games Presents
+</p>
+
+<p>
+In Association With UnrealForge Studios
+</p>
+
+<p class="made">
+Made With Unity
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const releaseDate =
+new Date("December 31, 2027 00:00:00")
+.getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+
+const distance = releaseDate - now;
+
+const days =
+Math.floor(distance/(1000*60*60*24));
+
+const hours =
+Math.floor((distance%(1000*60*60*24))
+/(1000*60*60));
+
+const mins =
+Math.floor((distance%(1000*60*60))
+/(1000*60));
+
+const secs =
+Math.floor((distance%(1000*60))
+/1000);
+
+document.getElementById("days").innerText=days;
+document.getElementById("hours").innerText=hours;
+document.getElementById("mins").innerText=mins;
+document.getElementById("secs").innerText=secs;
+
+},1000);
+
+</script>
+
+</body>
+</html>
